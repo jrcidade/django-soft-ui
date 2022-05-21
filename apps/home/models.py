@@ -8,3 +8,19 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class patient(models.Model):
+    id = models.AutoField(primary_key=True)
+    Firstname = models.CharField(max_length = 50)
+    Lastname = models.CharField(max_length = 100)
+    Age = models.IntegerField()
+
+
+    def __str__(self):
+        return self.Firstname+' '+self.Lastname
+
+class user_info(models.Model):
+    user_name = models.CharField('User name', max_length=128)
+    email = models.EmailField('email')
+
+    def __str__(self):
+       return self.user_name

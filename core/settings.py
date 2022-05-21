@@ -77,6 +77,18 @@ DATABASES = {
     }
 }
 
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'predictiondb',
+#        'USER': 'postgres',
+#        'PASSWORD': 'pgPass@word!',
+#        'HOST': 'localhost',
+#        'PORT': '5432',
+#    }
+#}
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -124,3 +136,8 @@ STATICFILES_DIRS = (
 
 #############################################################
 #############################################################
+
+# ie if Heroku server
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
