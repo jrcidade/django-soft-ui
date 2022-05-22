@@ -13,7 +13,7 @@ class patient(models.Model):
     Firstname = models.CharField(max_length = 50)
     Lastname = models.CharField(max_length = 100)
     Age = models.IntegerField()
-    Date = models.DateTimeField('Event Date')
+    Date = models.DateTimeField()
 
 
     def __str__(self):
