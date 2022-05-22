@@ -13,6 +13,7 @@ from django.shortcuts import render, redirect
 from .models import patient
 from .forms import patientForm
 from django.contrib import messages
+import datetime
 
 
 #@login_required(login_url="/login/")
