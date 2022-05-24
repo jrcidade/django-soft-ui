@@ -36,7 +36,8 @@ from django.contrib import messages
 @login_required(login_url="/login/")
 def update_patient(request, patient_id):
     patients = patient.objects.get(pk=patient_id)
-    return render(request,'home/update_patient.html', {'patients':patients})
+    form = patientForm(request.POST or None)
+    return render(request,'home/update_patient.html', {'patients':patients, 'form':form})
 
 
 
