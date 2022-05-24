@@ -37,7 +37,8 @@ from django.contrib import messages
 def update_patient(request, patient_id):
     patients = patient.objects.get(pk=patient_id)
     form = patientForm(request.POST or None)
-    return render(request,'home/update_patient.html', {'patients':patients, 'form':form})
+    return render(request,'home/update_patient.html', {'patients':patients,
+    'form':form})
 
 
 
