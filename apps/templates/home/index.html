@@ -31,7 +31,9 @@
                   <strong>{{ person.Firstname }} {{ person.Lastname }}</strong><br/>
                   Age: {{ person.Age }}<br/>
                   Date: {{ person.Date }}<br/><br/>
-                  <a href="#" class="btn btn-primary">Edit</a>
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                    Edit
+                  </a>
                   <hr>
               {% endfor %}
             </div>  
