@@ -11,3 +11,9 @@ from .models import user_info
 # Register your models here.
 admin.site.register(patient)
 admin.site.register(user_info)
+
+@admin.register(patient)
+class patientAdmin(admin.ModelAdmin):
+    list_display = ('Firstname', 'Lastname', 'Age', 'Date')
+    ordering = ('Lastname',)
+    search_fields = ('Firstname', 'Lastname', 'Age', 'Date')
