@@ -9,7 +9,7 @@ from .models import user_info
 
 
 # Register your models here.
-admin.site.register(patient)
+#admin.site.register(patient)
 admin.site.register(user_info)
 
 @admin.register(patient)
