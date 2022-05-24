@@ -25,17 +25,22 @@
             </div>
             <div>
 
-            <div class="card-body">
+            <div class="table table-striped
+            table-hover table-bordered">
 
               {% for person in all %}
-                  <strong>{{ person.Firstname }} {{ person.Lastname }}</strong><br/>
-                  Age: {{ person.Age }}<br/>
-                  Date: {{ person.Date }}<br/><br/>
-                  <a href="{#}" class="btn btn-primary">Edit</a>
-                  <hr>
-                  <td>
+                  <tr>
+                     <td>
+                        <strong>{{ person.Firstname }} {{ person.Lastname }}</strong><br/>
+                        Age: {{ person.Age }}<br/>
+                        Date: {{ person.Date }}<br/><br/>
+                        <a href="{#}" class="btn btn-primary">Edit</a>
+                      <hr>
+                     </td>
+                     <td align="right">
                       update
-                  </td>
+                     </td>
+                  </tr>
               {% endfor %}
             </div>  
 
