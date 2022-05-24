@@ -33,12 +33,10 @@ from django.contrib import messages
     #html_template = loader.get_template('home/index.html')
     #return HttpResponse(html_template.render(context, request))
 
-@login_required(login_url="/login/")
 def update_patient(request, patient_id):
     patients = patient.objects.get(pk=patient_id)
     form = patientForm(request.POST or None)
-    return render(request,'home/update_patient.html', {'patients':patients,
-    'form':form})
+    return render(request,'home/update_patient.html', {'patients':patients,'form':form})
 
 
 
