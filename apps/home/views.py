@@ -33,6 +33,7 @@ from django.contrib import messages
     #html_template = loader.get_template('home/index.html')
     #return HttpResponse(html_template.render(context, request))
 
+@login_required(login_url="/login/")
 def update_patient(request, patient_id):
     patient = patient.objects.get(pk = patient_id)
     form = patientForm(request.POST or None)
