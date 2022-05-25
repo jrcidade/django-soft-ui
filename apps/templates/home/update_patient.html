@@ -6,14 +6,16 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-    <h1>update info...</h1>
-    <br/>
+    <center>
+    <h1>update info</h1>
+    <br/><br/>
     <form action="" method=POST>
         {% csrf_token %}
-        {{form.as_p}}
+        
+        {{ form.as_p }}
         <br/>
         <input type="submit" value="Update" class="btn btn-primary">
-
+    </center>
     
 
 {% endblock javascripts %}
