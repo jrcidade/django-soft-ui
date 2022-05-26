@@ -54,7 +54,8 @@ def billing(request):
 @login_required(login_url="/login/")
 def updatepatient(request):
 
-    context ={}
+    form = patientForm()
+    context = {'form' :form}
     return render(request,'home/update_patient.html', context)
 
 
