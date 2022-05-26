@@ -55,6 +55,8 @@ def billing(request):
 def updatepatient(request):
 
     form = patientForm()
+    if request.method == 'POST':
+        print('printing POST:', request.POST)
     context = {'form' :form}
     return render(request,'home/update_patient.html', context)
 
