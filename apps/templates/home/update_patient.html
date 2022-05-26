@@ -3,16 +3,14 @@
 
 {% block content %}
 
-<h1>update info...</h1>
-<br/><br/>
-
-<div class="form-group">
+    <h1>update info...</h1>
+    <br/><br/>
     <form action= "" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <br/>
         <input type="submit" value="Update" class="btn btn-primary">
     </form>
-</div> 
+    
 
 {% endblock content %}
