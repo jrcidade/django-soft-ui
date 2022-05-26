@@ -33,13 +33,6 @@ from django.contrib import messages
     #html_template = loader.get_template('home/index.html')
     #return HttpResponse(html_template.render(context, request))
 
-@login_required(login_url="/login/")
-def update_patient(request, patient_id):
-    patient = patient.objects.get(patient_id)
-    form = patientForm(request.POST or None)
-    return render(request,'home/update_patient.html', {'patient':patient,'form':form})
-
-
 
 @login_required(login_url="/login/")
 def index(request):
@@ -58,7 +51,15 @@ def billing(request):
     else:
         return render(request,'billing.html', {})
     
+@login_required(login_url="/login/")
+def updatepatient(request, patient_id):
+    patient = patient.objects.get(patient_id)
+    form = patientForm(request.POST or None)
+    context ={}
+    return render(request,'home/update_patient.html', context)
 
+
+    
 @login_required(login_url="/login/")
 def pages(request):
     context = {}
