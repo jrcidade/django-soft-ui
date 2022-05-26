@@ -52,9 +52,8 @@ def billing(request):
         return render(request,'billing.html', {})
     
 @login_required(login_url="/login/")
-def updatepatient(request, patient_id):
-    patient = patient.objects.get(patient_id)
-    form = patientForm(request.POST or None)
+def updatepatient(request):
+
     context ={}
     return render(request,'home/update_patient.html', context)
 
