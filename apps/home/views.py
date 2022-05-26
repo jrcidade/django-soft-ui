@@ -3,6 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+from multiprocessing import context
 from django import template
 from django.forms import modelformset_factory
 from django.contrib.auth.decorators import login_required
@@ -34,10 +35,11 @@ from django.contrib import messages
     #return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
-def update_patient(request, patient_id):
-    patient = patient.objects.get(pk = patient_id)
-    form = patientForm(request.POST or None)
-    return render(request,'home/update_patient.html', {'patient':patient,'form':form})
+def update_patient(request, pk):
+    patient = patient.objects.get(id =pk)
+    form = patientForm(instance=patient)
+    context = {'form': form}
+    return render(request,'home/update_patient.html', context)
 
 
 
