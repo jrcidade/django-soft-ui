@@ -52,11 +52,9 @@ def billing(request):
         return render(request,'billing.html', {})
     
 @login_required(login_url="/login/")
-def updatepatient(request):
+def updatepatient(request, pk):
 
     form = patientForm()
-    if request.method == 'POST':
-        print('printing POST:', request.POST)
     context = {'form' :form}
     return render(request,'home/update_patient.html', context)
 
