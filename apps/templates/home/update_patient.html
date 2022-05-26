@@ -7,20 +7,12 @@
 <br/><br/>
 
 <div class="form-group">
-    <form action='/' method="POST">
+    <form action= "" method="POST">
         {% csrf_token %}
-        {{ form.title }}
+        {{ form.as_p }}
         <br/>
-        <input type="submit" name="Create Task">
+        <input type="submit" value="Update" class="btn btn-primary">
     </form>
-
-    {% for patient in patients %}
-
-    <div class="">
-        <a href="{% url 'update_patient' patient.id %}">Update</a>
-        <p>{{patient}}</p>
-
-    </div>
-
+</div> 
 
 {% endblock content %}
