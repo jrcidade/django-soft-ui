@@ -57,7 +57,7 @@ def updatebilling(request, pk):
     patient = patient.objects.get(id=pk)
     form = patientForm(instance=patient)
     context = {'form' :form}
-    return render(request,'update_billing.html', context)
+    return render(request,'updatebilling.html', context)
 
 
     
