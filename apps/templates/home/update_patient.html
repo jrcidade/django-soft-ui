@@ -3,7 +3,13 @@
 {% block content %}
 
         <h1>update patient...</h1>
-        <br/>
-        {{ patient }}
+        
+        <form action="" method=POST>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br/>
+            <input type="submit" value="Update" class="btn btn-primary">
+        </form>
+        
 
 {% endblock javascripts %}

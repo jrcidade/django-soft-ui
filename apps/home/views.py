@@ -55,7 +55,7 @@ def billing(request):
 @login_required(login_url="/login/")
 def update_patient(request, patient_id):
     patient = patient.objects.get(pk=patient_id)
-    form = patientForm(request.POST or None, request.FILES or None, instance=patient)
+    form = patientForm(request.POST or None, instance=patient)
     if form.is_valid():
         form.save()
         return redirect('/')
