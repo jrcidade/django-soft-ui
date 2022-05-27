@@ -37,8 +37,10 @@
                         
                      </td>
                      <td align="right">
-                      <a class="btn btn-primary btn-sm btn-block" href="{% url 'update_patient' patient.id %}">update</a>
-                          
+                      <a href="{% url 'update_patient' patient.id %}"
+                      class="btn btn-primary">update</a>
+
+
                      </td>
                   </tr>
               {% endfor %}
