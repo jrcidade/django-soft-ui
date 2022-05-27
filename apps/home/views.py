@@ -53,14 +53,14 @@ def billing(request):
 
 
 @login_required(login_url="/login/")
-def updatebilling(request, patient_id):
+def update_patient(request, patient_id):
     patient = patient.objects.get(pk=patient_id)
     form = patientForm(request.POST or None, request.FILES or None, instance=patient)
     if form.is_valid():
         form.save()
         return redirect('/')
 
-    return render(request,'updatebilling.html', {'patient' : patient,'form' :form})
+    return render(request,'update_patient.html', {'patient' : patient,'form' :form})
 
 
     
