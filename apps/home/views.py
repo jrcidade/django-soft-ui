@@ -47,7 +47,7 @@ def billing(request):
         if form.is_valid():
             form.save()
         messages.success(request,('Your form has been submitted successfuly!'))
-        return redirect('index.html')
+        return redirect('/')
     else:
         return render(request,'billing.html', {})
 
@@ -57,7 +57,7 @@ def updatebilling(request, pk):
     patient = patient.objects.get(id=pk)
     form = patientForm(instance=patient)
     context = {'form' :form}
-    return render(request,'home/update_billing.html', context)
+    return render(request,'update_billing.html', context)
 
 
     
