@@ -53,8 +53,8 @@ def billing(request):
     
 @login_required(login_url="/login/")
 def updatepatient(request, pk):
-
-    form = patientForm()
+    patient = patient.objects.get(id=pk)
+    form = patientForm(instance=patient)
     context = {'form' :form}
     return render(request,'home/update_patient.html', context)
 
