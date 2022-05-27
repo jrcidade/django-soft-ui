@@ -35,7 +35,12 @@
                         Age: {{ person.Age }}<br/>
                         Date: {{ person.Date }}<br/><br/>
                         
+                     </td>
+                     <td align="right">
+                      <a href="{% url 'update_billing' billing.id %}" class="btn btn-primary">update</a>
 
+
+                     </td>
                   </tr>
               {% endfor %}
             </table>  
