@@ -42,14 +42,17 @@ def index(request):
 
 @login_required(login_url="/login/")
 def billing(request):
+    form = patientForm()
     if request.method == "POST":
         form = patientForm(request.POST or None)
         if form.is_valid():
             form.save()
         messages.success(request,('Your form has been submitted successfuly!'))
-        return redirect(reverse('index'))
-    else:
-        return render(request,'billing.html', {})
+        return redirect('/')
+        
+    context = {'form' :form}
+    return render(request,'billing.html', {})
+ 
     
 @login_required(login_url="/login/")
 def updatepatient(request, pk):
