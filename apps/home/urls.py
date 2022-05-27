@@ -11,7 +11,7 @@ urlpatterns = [
     # The home page
     path('', views.index, name='index'),
     path('billing', views.billing, name='billing'),
-    path('update_patient/<str:pk>/', views.updatepatient, name='update_patient'),
+    path('update_billing/<str:pk>/', views.updatebilling, name='update_billing'),
 
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
