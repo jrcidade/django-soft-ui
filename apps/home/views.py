@@ -47,7 +47,7 @@ def billing(request):
         if form.is_valid():
             form.save()
         messages.success(request,('Your form has been submitted successfuly!'))
-        return redirect(reverse('index'))
+        return redirect(reverse('index.html'))
     else:
         return render(request,'billing.html', {})
 
