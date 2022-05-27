@@ -9,7 +9,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class patient(models.Model):
-    id = models.AutoField(primary_key=True)
     Firstname = models.CharField(max_length = 50)
     Lastname = models.CharField(max_length = 100)
     Age = models.IntegerField()
