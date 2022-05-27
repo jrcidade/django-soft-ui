@@ -3,14 +3,14 @@
 
 {% block content %}
 
-    <h1>update info...</h1>
-    <br/><br/>
-    <form action= "" method="POST">
-        {% csrf_token %}
-        {{form}}
+<h1>update info...</h1>
+<br/><br/>
 
-        <input type="submit" value="Update">
-    </form>
+<form action= "" method="POST">
+   {% csrf_token %}
+   {{form.as_p}}
+   <input type="submit" value="Submit">
+</form>
 
 
 {% endblock content %}
